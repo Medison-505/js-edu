@@ -9,6 +9,13 @@ module.exports = function getTimeForEducation(
     knowsProgramming = true,
     config = {family: 4}
     ) {
-      return 0;
+
+    let requiredTimeForLearning = 800;
+    if (!knowsProgramming){
+        requiredTimeForLearning = requiredTimeForLearning+500;
+    }
+    let freeTimeForLearning = config[focus];
+    let requiredWeeks = requiredTimeForLearning / freeTimeForLearning;
+    return Math.ceil(requiredWeeks);
   };
   
